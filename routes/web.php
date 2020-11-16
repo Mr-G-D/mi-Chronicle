@@ -46,5 +46,7 @@ Route::get('/home/{id}',[postsController::class,'show']);
 Route::put('/home/{id}',[postsController::class,'update']);
 Route::get('/home/{id}/edit',[postsController::class,'edit']);
 
+Route::get('/home/{id}/delete',[postsController::class,'destroy']);
+
 
 ?>

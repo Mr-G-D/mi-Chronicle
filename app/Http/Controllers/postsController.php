@@ -59,7 +59,7 @@ class postsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::orderBy("Date","asc");
+        $post = Post::find($id);
         return view('/posts.show')->with('post',$post);
     }
 
@@ -108,6 +108,8 @@ class postsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('home');
     }
 }
