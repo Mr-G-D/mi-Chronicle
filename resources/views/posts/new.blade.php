@@ -47,16 +47,18 @@
                                 @csrf
                                 <div class="form-group" style="padding-bottom: 25px">
                                     
-                                    <input name="title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Title" >
-                                   
+                                    <input name="title" type="text" class="form-control" id="exampleInputEmail1" placeholder="Title" value="{{old('title')}}">
+                                    <p class="help is-danger">{{$errors->first('title')}}</p>
                                 </div>
                                 <div class="form-group" style="padding-bottom: 25px">
                                     
-                                    <input name="date" type="date" class="form-control"  >
+                                    <input name="date" type="date" class="form-control" value="{{old('Date')}}" >
+                                    <p class="help is-danger">{{$errors->first('Date')}}</p>
                                 </div>
                                 <div class="form-group" >
                                     
-                                    <textarea id="editor" name="body" placeholder="Body Text" cols="95" rows="10" ></textarea>
+                                    <textarea id="editor" name="body" placeholder="Body Text" cols="95" rows="10" >{{old('body')}}</textarea>
+                                    <p class="help is-danger">{{$errors->first('body')}}</p>
                                 </div>
                                 
                                 

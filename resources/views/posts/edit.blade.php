@@ -18,25 +18,25 @@
                     <div class="card">
                         <div class="container shadow">
                             <h2 class="blockquote text-center">
-                                <p class="mb-0">Edit an Event</p>
-                                
+                                <p class="mb-0">Edit an Event</p>    
                             </h2>
 
-                            <form method="POST" action="home/{{$post->id}}" style="padding: 25px"  >
+                            <form method="POST" action="/icrewsystems/mi-CHRONICLE/home/{{$post->id}}" style="padding: 25px"  >
                                 @csrf
                                 @method('PUT')
-                                <div class="form-group" style="padding-bottom: 25px">
-                                    
+                                <div class="form-group" style="padding-bottom: 25px">    
                                     <input name="title" type="text" class="form-control" id="exampleInputEmail1" value="{{$post->title}}" >
-                                   
+                                    <p class="help is-danger">{{$errors->first('title')}}</p>
                                 </div>
                                 <div class="form-group" style="padding-bottom: 25px">
                                     
                                     <input name="date" type="date" class="form-control" value="{{$post->Date}}" >
+                                    <p class="help is-danger">{{$errors->first('Date')}}</p>
                                 </div>
                                 <div class="form-group" >
                                     
                                     <textarea id="editor" name="body" placeholder="Body Text" cols="95" rows="10" >{{$post->body}}</textarea>
+                                    <p class="help is-danger">{{$errors->first('body')}}</p>
                                 </div>
                                 
                                 

@@ -59,7 +59,7 @@ class postsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
+        $post = Post::orderBy("Date","asc");
         return view('/posts.show')->with('post',$post);
     }
 
@@ -90,7 +90,7 @@ class postsController extends Controller
             'date' => 'required',
             'body' => 'required'
         ]);
-        $post = new Post;
+        $post = Post::find($id);
         $post ->title = $request->input('title');
         $post ->Date = $request->input('date');
         $post ->body = $request->input('body');

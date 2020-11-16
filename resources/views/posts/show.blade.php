@@ -29,6 +29,7 @@
                                 <a class="btn btn-info btn-sm " href="{{$post->id}}/edit"   role="button">Edit</a>
 
                                 <a class="btn btn-danger btn-sm " href="#"   role="button">Delete</a>
+                                {{-- {!!Form::open(['action'=>[postsController::class,'destroy',$podt->id],'method'=>'POST'])!!} --}}
                             </div>
                             
 
